@@ -1,78 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>The Global Menagerie</title>
-        <link rel="stylesheet" href="https://cdn.tailwindcss.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/index.css" />
-    </head>
-    <body class="body-background">
-        <div class="body-content flex flex-col">
-            <nav>
-                <!-- Nada xd -->
-            </nav>
-            <main
-                class="flex-row min-h-screen flex flex-col md:flex-row flex-grow p-12 gap-12 overflow-y-auto">
-                <div class="md:w-[21%]">
-                    <div
-                        class="container-box w-full min-w-[200px] rounded-1g shadow-1g p-6">
-                        <!-- El mero div -->
-                        hola
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Global Menagerie</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body class="body-background">
+    <div class="body-content flex flex-col">
+        <nav>
+        </nav>
+        <main class="flex-row min-h-screen flex flex-col md:flex-row flex-grow p-12 gap-12 overflow-y-auto">
+            <div class="md:w-[21%]">
+                <div class="container-box w-full min-w-[200px] rounded-1g shadow-1g p-6">
+                    <div class="logo-section">
+                        <img src="" alt="Logo The Global Menagerie" class="logo-img">
+                        <h1 class="logo-text">THE GLOBAL<br>MENAGERIE</h1>
+                    </div>
+                    <hr class="sidebar-divider">
+                    <div class="profile-section d-flex align-items-center">
+                        <img src="img/pfp.jpg" alt="Foto de perfil" class="profile-img rounded-circle">
+                        <div class="profile-info">
+                            <small>Sesión inciada como:</small>
+                            <div class="username">Juan421P</div>
+                            <div class="email">20210297@ricaldone.edu.sv</div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <a href="#">Ver perfil</a>
+                        <a href="#">Cerrar sesión</a>
+                    </div>
+                    <div class="nav-section">
+                        <p class="nav-title">PÁGINA PRINCIPAL</p>
+                        <hr class="sidebar-divider">
+                        <ul class="nav nav-pills flex-column sidebar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="bi bi-house-door"></i>
+                                    <span>Inicio</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <p class="nav-title">APARTADOS</p>
+                        <hr class="sidebar-divider">
+                        <ul class="nav nav-pills flex-column sidebar-nav">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link active">
+                                    <i class="bi bi-grid-fill"></i>
+                                    <span>Vista de animales</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="GestionAnimal.html" class="nav-link">
+                                    <i class="bi bi-gear-fill"></i>
+                                    <span>Gestión de animales</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="flex-grow flex flex-col gap-12">
-                    <div class="container-box h-[15%] flex flex-col">
-                        <div
-                            class="flex items-start justify-between p-12 h-full w-full">
-                            <div>
-                                <h2
-                                    class="text-xl text-1 font-semibold text-shadow">
-                                    ¡Bienvenido de vuelta!
-                                </h2>
-                            </div>
-                            <div
-                                class="flex items-center p-[25px] space-x-[25px]">
-                                <button>
-
-                                </button>
-                                <button>
-
-                                </button>
-                                <button>
-
-                                </button>
-                                <div class="relative flex items-center">
-                                    <input type="text" placeholder="Buscar"
-                                        class="px-4 py-4 rounded-md placeholder:italic placeholder:text-gray-500 focus:outline-none container-box-2">
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            <div class="flex-grow flex flex-col gap-12">
+                <div class="container-box h-[15%] flex flex-col">
+                    <div class="flex items-start justify-between p-12 h-full w-full">
                         <div>
-
+                            <h2 class="text-xl text-1 font-semibold text-shadow">
+                                ¡Bienvenido de vuelta!
+                            </h2>
+                        </div>
+                        <div class="flex items-center gap-x-10">
+                            <button>
+                                <svg width="37" height="44" viewBox="0 0 37 44" fill="none" class="svg-shadow"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M36.2889 30.7784C34.6932 29.0638 31.7076 26.4846 31.7076 18.0357C31.7076 11.6186 27.2082 6.48152 21.1412 5.22121V3.50006C21.1412 2.04071 19.9585 0.857208 18.5 0.857208C17.0415 0.857208 15.8588 2.04071 15.8588 3.50006V5.22121C9.79181 6.48152 5.29236 11.6186 5.29236 18.0357C5.29236 26.4846 2.30677 29.0638 0.711149 30.7784C0.215614 31.3111 -0.00407235 31.9478 5.71011e-05 32.5714C0.00914189 33.9259 1.07206 35.2142 2.65116 35.2142H34.3488C35.9279 35.2142 36.9917 33.9259 36.9999 32.5714C37.0041 31.9478 36.7844 31.3103 36.2889 30.7784ZM5.57729 31.25C7.32983 28.94 9.2459 25.1111 9.25498 18.0836C9.25498 18.0671 9.25003 18.0522 9.25003 18.0357C9.25003 12.9268 13.391 8.78576 18.5 8.78576C23.609 8.78576 27.75 12.9268 27.75 18.0357C27.75 18.0522 27.745 18.0671 27.745 18.0836C27.7541 25.112 29.6702 28.9408 31.4227 31.25H5.57729ZM18.5 43.1428C21.417 43.1428 23.7832 40.7766 23.7832 37.8571H13.2168C13.2168 40.7766 15.583 43.1428 18.5 43.1428Z"
+                                        fill="#767676" />
+                                </svg>
+                            </button>
+                            <button>
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="svg-shadow"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M40.05 31.44H13.5L12.78 27.69H40.17C41.0334 27.6924 41.8708 27.3944 42.5386 26.847C43.2063 26.2997 43.6629 25.5371 43.83 24.69L46.35 12.69C46.4661 12.1442 46.4589 11.5794 46.3289 11.0368C46.199 10.4941 45.9496 9.98731 45.5989 9.55328C45.2483 9.11925 44.8052 8.76895 44.3019 8.52792C43.7987 8.28688 43.248 8.16119 42.69 8.16H9L8.34 4.44H1.5V8.19H5.25L9.75 31.71C8.44303 32.0188 7.27746 32.7572 6.43985 33.807C5.60223 34.8567 5.14101 36.1571 5.13 37.5C5.20025 39.1526 5.92072 40.7106 7.13445 41.8344C8.34819 42.9582 9.95685 43.5569 11.61 43.5C13.25 43.5406 14.84 42.9338 16.0359 41.8109C17.2318 40.688 17.9374 39.1393 18 37.5C17.9945 36.7058 17.8313 35.9206 17.52 35.19H33.99C33.6787 35.9206 33.5155 36.7058 33.51 37.5C33.5803 39.1526 34.3007 40.7106 35.5145 41.8344C36.7282 42.9582 38.3368 43.5569 39.99 43.5C41.5813 43.5 43.1074 42.8679 44.2326 41.7426C45.3579 40.6174 45.99 39.0913 45.99 37.5C45.99 35.9087 45.3579 34.3826 44.2326 33.2574C43.1074 32.1321 41.5813 31.5 39.99 31.5L40.05 31.44ZM42.69 12L40.17 24H12L9.78 12H42.69ZM11.61 39.81C10.963 39.8281 10.3334 39.5995 9.84874 39.1705C9.36408 38.7416 9.06066 38.1444 9 37.5C9.06109 36.8338 9.38151 36.2183 9.89219 35.7862C10.4029 35.3541 11.0629 35.14 11.73 35.19C12.3939 35.1403 13.0505 35.3553 13.5564 35.7881C14.0623 36.221 14.3764 36.8364 14.43 37.5C14.4041 37.8398 14.3097 38.1708 14.1522 38.473C13.9948 38.7752 13.7778 39.0423 13.5142 39.2582C13.2506 39.4742 12.9459 39.6344 12.6186 39.7292C12.2913 39.8241 11.9482 39.8515 11.61 39.81ZM40.05 39.81C39.3829 39.86 38.7229 39.6459 38.2122 39.2138C37.7015 38.7817 37.3811 38.1662 37.32 37.5C37.4362 36.8646 37.7715 36.2901 38.2676 35.8765C38.7637 35.4629 39.3891 35.2364 40.035 35.2364C40.6809 35.2364 41.3063 35.4629 41.8024 35.8765C42.2985 36.2901 42.6338 36.8646 42.75 37.5C42.6889 38.1606 42.3727 38.7714 41.8686 39.2027C41.3645 39.634 40.7121 39.8518 40.05 39.81Z"
+                                        fill="#767676" />
+                                </svg>
+                            </button>
+                            <button class="flex items-center">
+                                <svg width="39" height="40" viewBox="0 0 39 40" fill="none" class="svg-shadow"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.69 40C15.79 40 15.0153 39.7 14.366 39.1C13.7167 38.5 13.3247 37.7667 13.19 36.9L12.74 33.6C12.3067 33.4333 11.8987 33.2333 11.516 33C11.1333 32.7667 10.758 32.5167 10.39 32.25L7.29 33.55C6.45667 33.9167 5.62333 33.95 4.79 33.65C3.95667 33.35 3.30667 32.8167 2.84 32.05L0.49 27.95C0.023333 27.1833 -0.11 26.3667 0.0900001 25.5C0.29 24.6333 0.74 23.9167 1.44 23.35L4.09 21.35C4.05667 21.1167 4.04 20.8913 4.04 20.674V19.324C4.04 19.108 4.05667 18.8833 4.09 18.65L1.44 16.65C0.74 16.0833 0.29 15.3667 0.0900001 14.5C-0.11 13.6333 0.023333 12.8167 0.49 12.05L2.84 7.95C3.30667 7.18333 3.95667 6.65 4.79 6.35C5.62333 6.05 6.45667 6.08333 7.29 6.45L10.39 7.75C10.7567 7.48333 11.14 7.23333 11.54 7C11.94 6.76667 12.34 6.56667 12.74 6.4L13.19 3.1C13.3233 2.23333 13.7153 1.5 14.366 0.9C15.0167 0.3 15.7913 0 16.69 0H21.39C22.29 0 23.0653 0.3 23.716 0.9C24.3667 1.5 24.758 2.23333 24.89 3.1L25.34 6.4C25.7733 6.56667 26.182 6.76667 26.566 7C26.95 7.23333 27.3247 7.48333 27.69 7.75L30.79 6.45C31.6233 6.08333 32.4567 6.05 33.29 6.35C34.1233 6.65 34.7733 7.18333 35.24 7.95L37.59 12.05C38.0567 12.8167 38.19 13.6333 37.99 14.5C37.79 15.3667 37.34 16.0833 36.64 16.65L33.99 18.65C34.0233 18.8833 34.04 19.1087 34.04 19.326V20.674C34.04 20.8913 34.0067 21.1167 33.94 21.35L36.59 23.35C37.29 23.9167 37.74 24.6333 37.94 25.5C38.14 26.3667 38.0067 27.1833 37.54 27.95L35.14 32.05C34.6733 32.8167 34.0233 33.35 33.19 33.65C32.3567 33.95 31.5233 33.9167 30.69 33.55L27.69 32.25C27.3233 32.5167 26.94 32.7667 26.54 33C26.14 33.2333 25.74 33.4333 25.34 33.6L24.89 36.9C24.7567 37.7667 24.3653 38.5 23.716 39.1C23.0667 39.7 22.2913 40 21.39 40H16.69ZM17.04 36H20.99L21.69 30.7C22.7233 30.4333 23.682 30.042 24.566 29.526C25.45 29.01 26.258 28.3847 26.99 27.65L31.94 29.7L33.89 26.3L29.59 23.05C29.7567 22.5833 29.8733 22.092 29.94 21.576C30.0067 21.06 30.04 20.5347 30.04 20C30.04 19.4653 30.0067 18.9407 29.94 18.426C29.8733 17.9113 29.7567 17.4193 29.59 16.95L33.89 13.7L31.94 10.3L26.99 12.4C26.2567 11.6333 25.4487 10.992 24.566 10.476C23.6833 9.96 22.7247 9.568 21.69 9.3L21.04 4H17.09L16.39 9.3C15.3567 9.56667 14.3987 9.95867 13.516 10.476C12.6333 10.9933 11.8247 11.618 11.09 12.35L6.14 10.3L4.19 13.7L8.49 16.9C8.32333 17.4 8.20667 17.9 8.14 18.4C8.07333 18.9 8.04 19.4333 8.04 20C8.04 20.5333 8.07333 21.05 8.14 21.55C8.20667 22.05 8.32333 22.55 8.49 23.05L4.19 26.3L6.14 29.7L11.09 27.6C11.8233 28.3667 12.632 29.0087 13.516 29.526C14.4 30.0433 15.358 30.4347 16.39 30.7L17.04 36ZM19.14 27C21.0733 27 22.7233 26.3167 24.09 24.95C25.4567 23.5833 26.14 21.9333 26.14 20C26.14 18.0667 25.4567 16.4167 24.09 15.05C22.7233 13.6833 21.0733 13 19.14 13C17.1733 13 15.5153 13.6833 14.166 15.05C12.8167 16.4167 12.1413 18.0667 12.14 20C12.1387 21.9333 12.814 23.5833 14.166 24.95C15.518 26.3167 17.176 27 19.14 27Z"
+                                        fill="#767676" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <div class="container-box h-[85%] flex">
-                        <div>
+                    <div>
 
-                        </div>
-                        <div>
-
-                        </div>
                     </div>
                 </div>
-            </main>
-            <footer class="container-box footer-container flex-shrink-0">
-                <p>&copy; 2024 The Global Menagerie. All rights reserved.</p>
-            </footer>
-        </div>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="js/script.js"></script>
-    </body>
+                <div class="container-box h-[85%] flex">
+                    
+                </div>
+            </div>
+        </main>
+        <footer class="container-box footer-container flex-shrink-0">
+            <p>&copy; 2024 The Global Menagerie. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/script.js"></script>
+</body>
+
 </html>
