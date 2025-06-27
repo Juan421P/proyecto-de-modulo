@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Global Menagerie</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body class="body-background">
-    <div class="body-content">
-      <main class="d-flex flex-row">
-        <div class="d-flex left-container-box">
-          <div class="container-box w-100 h-100">
-            hola
-          </div>
-        </div>
-        <div class="d-flex flex-column right-container-box">
-          <div class="container-box">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Global Menagerie</title>
+        <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body class="body-background">
+        <div class="body-content flex flex-col">
+            <nav>
+                <!-- Nada xd -->
+            </nav>
+            <main
+                class="flex-row min-h-screen flex flex-col md:flex-row flex-grow p-12 gap-12 overflow-y-auto">
+                <div class="md:w-[21%]">
+                    <div
+                        class="container-box w-full min-w-[200px] rounded-1g shadow-1g p-6">
+                        <!-- El mero div -->
+                        hola
+                    </div>
+                </div>
+                <div class="flex-grow flex flex-col gap-12">
+                    <div class="container-box h-[15%] flex flex-col">
+                        <div
+                            class="flex items-start justify-between p-12 h-full w-full">
+                            <div>
+                                <h2
+                                    class="text-xl text-1 font-semibold text-shadow">
+                                    ¡Bienvenido de vuelta!
+                                </h2>
+                            </div>
+                            <div
+                                class="flex items-center p-[25px] space-x-[25px]">
+                                <button>
 
-          </div>
-          <div class="container-box">
+                                </button>
+                                <button>
 
-          </div>
+                                </button>
+                                <button>
+
+                                </button>
+                                <div class="relative flex items-center">
+                                    <input type="text" placeholder="Buscar"
+                                        class="px-4 py-4 rounded-md placeholder:italic placeholder:text-gray-500 focus:outline-none container-box-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="container-box h-[85%] flex">
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="container-box footer-container flex-shrink-0">
+                <p>&copy; 2024 The Global Menagerie. All rights reserved.</p>
+            </footer>
         </div>
-      </main>
-      <footer></footer>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/script.js"></script>
-  </body>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
