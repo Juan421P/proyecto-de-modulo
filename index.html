@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" class="scrollbar-none">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Inicio</title>
+</head>
+
+<body class="relative">
+    <!-- El fondo -->
+    <div class="fixed inset-0 z-0">
+        <div class="w-full h-full bg-[url('./img/top.jpg')] bg-cover bg-center opacity-75 mix-blend-overlay"></div>
+    </div>
+    <button id="burger" class="fixed top-4 left-4 z-50 p-3 rounded-xl md:hidden
+               bg-black/70 shadow-md drop-shadow text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-10 flex flex-col md:flex-row justify-center items-center md:justify-between p-6 md:pr-8 bg-black/75 transition-all duration-300 ease-in-out opacity-0 -translate-y-full pointer-events-none md:opacity-100 md:pointer-events-auto">
+        <div class="flex flex-col md:flex-row items-center my-15 md:my-0 gap-4">
+            <div class="w-30 md:w-14 h-30 md:h-14 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                <img src="img/logo.png" alt="Logo de AVA">
+            </div>
+            <p class="text-xl text-white text-shadow max-w-40 text-center"><strong>A</strong>gencia de
+                <strong>V</strong>iajes <strong>A</strong>dolfo
+            </p>
+        </div>
+        <div class="flex flex-col gap-6 md:flex-row items-center md:space-x-6 mb-10 md:mb-0">
+            <div>
+                <a href="index.html" class="relative text-white text-shadow nav-link nav-link-active">Inicio</a>
+            </div>
+            <div>
+                <a href="destinations.html" class="relative text-white text-shadow nav-link">Destinos</a>
+            </div>
+            <div>
+                <a href="destinations-admin.html" class="relative text-white text-shadow nav-link">Gestión de
+                    destinos</a>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="relative z-9 min-h-screen transition-all duration-300 ease-in-out pb-20">
+        <div class="h-[101vh] flex items-center justify-start p-10 md:p-40">
+            <div class="flex flex-col gap-20">
+                <div class="flex flex-col justify-center gap-8 max-w-sm md:max-w-md">
+                    <div>
+                        <h1 class="text-center md:text-left text-4xl md:text-5xl font-bold text-shadow select-none">
+                            Viajes rentables, ¡a todo el mundo!</h1>
+                    </div>
+                    <div>
+                        <h2 class="text-center md:text-left text-lg md:text-xl font-semibold text-shadow select-none">
+                            Planificación de viajes tanto para viajeros
+                            aficionados independientes y casuales como para
+                            empresas.</h2>
+                    </div>
+                </div>
+                <div class="flex justify-center md:justify-start">
+                    <button id="redirect-destinations"
+                        class="bg-black/75 w-auto px-8 py-4 text-white cursor-pointer rounded-xl text-xl transition-all hover:scale-105 hover:bg-black/80 duration-300">
+                        Ver viajes programados
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"
+        class="fixed bottom-0 left-0 w-full z-10 bg-black/75 text-white p-6 pr-8 transition-transform duration-300 translate-y-full">
+        <p>&copy; 2025 Agencia de Viajes Adolfo</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

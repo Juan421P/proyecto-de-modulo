@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" class="scrollbar-none">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Destinos</title>
+</head>
+
+<body class="relative">
+    <!-- El fondo -->
+    <div class="fixed inset-0 z-0">
+        <div class="w-full h-full bg-[url('./img/top.jpg')] bg-cover bg-center opacity-75 mix-blend-overlay"></div>
+    </div>
+    <button id="burger" class="fixed top-4 left-4 z-50 p-3 rounded-xl md:hidden
+               bg-black/70 shadow-md drop-shadow text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-10 flex flex-col md:flex-row justify-center items-center md:justify-between p-6 md:pr-8 bg-black/75 transition-all duration-300 ease-in-out opacity-0 -translate-y-full pointer-events-none md:opacity-100 md:pointer-events-auto">
+        <div class="flex flex-col md:flex-row items-center my-15 md:my-0 gap-4">
+            <div class="w-30 md:w-14 h-30 md:h-14 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                <img src="img/logo.png" alt="Logo de AVA">
+            </div>
+            <p class="text-xl text-white text-shadow max-w-40 text-center"><strong>A</strong>gencia de
+                <strong>V</strong>iajes <strong>A</strong>dolfo
+            </p>
+        </div>
+        <div class="flex flex-col gap-6 md:flex-row items-center md:space-x-6 mb-10 md:mb-0">
+            <div>
+                <a href="index.html" class="relative text-white text-shadow nav-link">Inicio</a>
+            </div>
+            <div>
+                <a href="destinations.html"
+                    class="relative text-white text-shadow nav-link nav-link-active">Destinos</a>
+            </div>
+            <div>
+                <a href="destinations-admin.html" class="relative text-white text-shadow nav-link">Gestión de
+                    destinos</a>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="relative z-9 min-h-screen transition-all duration-300 ease-in-out">
+        <div class="h-[101vh] flex items-start justify-center">
+            <div id="card-container" class="flex flex-col md:flex-row flex-wrap p-10 gap-10 pb-30">
+                <!-- Aquí se ubicarán posteriormente las tarjetillas -->
+            </div>
+        </div>
+    </main>
+    <footer id="footer"
+        class="fixed bottom-0 left-0 w-full z-10 bg-black/75 text-white p-6 pr-8 transition-transform duration-300 translate-y-full">
+        <p>&copy; 2025 Agencia de Viajes Adolfo</p>
+    </footer>
+    <template id="card-template">
+        <div id="card" class="relative rounded-tl-[25px] rounded-br-[25px] overflow-hidden shadow-xl min-w-xs">
+            <div class="absolute inset-0 bg-black/33 z-9"></div>
+            <div id="card-price"
+                class="absolute top-0 left-0 bg-gradient-to-tr from-red-500 to-orange-500 rounded-br-xl px-6 py-2 text-white z-10">
+                precio</div>
+            <img id="card-image" alt="Imagen del destino" class="h-48 w-full object-cover">
+            <div class="absolute bottom-0 left-0 px-6 py-4 flex flex-col z-10">
+                <span id="card-city"
+                    class="text-md bg-gradient-to-tr from-slate-50 to-red-50 bg-clip-text text-transparent font-semibold drop-shadow">ciudad</span>
+                <span id="card-destination"
+                    class="text-xl bg-gradient-to-tr from-slate-50 to-red-50 bg-clip-text text-transparent font-bold drop-shadow">destino</span>
+            </div>
+        </div>
+    </template>
+    <script src="js/script.js"></script>
+    <script src="js/destinations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" class="scrollbar-none">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gestión de destinos</title>
+</head>
+
+<body class="relative">
+    <!-- El fondo -->
+    <div class="fixed inset-0 z-0">
+        <div class="w-full h-full bg-[url('./img/top.jpg')] bg-cover bg-center opacity-75 mix-blend-overlay"></div>
+    </div>
+    <button id="burger" class="fixed top-4 left-4 z-50 p-3 rounded-xl md:hidden
+               bg-black/70 shadow-md drop-shadow text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-10 flex flex-col md:flex-row justify-center items-center md:justify-between p-6 md:pr-8 bg-black/75 transition-all duration-300 ease-in-out opacity-0 -translate-y-full pointer-events-none md:opacity-100 md:pointer-events-auto">
+        <div class="flex flex-col md:flex-row items-center my-15 md:my-0 gap-4">
+            <div id="logo"
+                class="w-30 md:w-14 h-30 md:h-14 bg-gray-300 rounded-lg overflow-hidden shadow-md cursor-pointer">
+                <img src="img/logo.png" alt="Logo de AVA">
+            </div>
+            <p class="text-xl text-white text-shadow max-w-40 text-center"><strong>A</strong>gencia de
+                <strong>V</strong>iajes <strong>A</strong>dolfo
+            </p>
+        </div>
+        <div class="flex flex-col gap-6 md:flex-row items-center md:space-x-6 mb-10 md:mb-0">
+            <div>
+                <a href="index.html" class="relative text-white text-shadow nav-link">Inicio</a>
+            </div>
+            <div>
+                <a href="destinations.html" class="relative text-white text-shadow nav-link">Destinos</a>
+            </div>
+            <div>
+                <a href="destinations-admin.html"
+                    class="relative text-white text-shadow nav-link nav-link-active">Gestión de
+                    destinos</a>
+            </div>
+        </div>
+    </nav>
+    <main id="main" class="relative z-9 min-h-screen transition-all duration-300 ease-in-out pb-20">
+        <div class="h-[101vh] flex flex-col lg:flex-row items-start p-4 lg:p-6 gap-4 lg:gap-6 overflow-x-auto">
+            <div class="w-full md:w-sm md:flex-shrink-0">
+                <form id="destination-form" autocomplete="off"
+                    class="bg-white/50 backdrop-blur-sm p-6 lg:p-8 rounded-xl shadow-lg flex flex-col gap-4 w-full">
+                    <input type="hidden" id="id-input">
+                    <input id="city-input" type="text" placeholder="Ciudad" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md">
+                    <input id="country-input" type="text" placeholder="País" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md">
+                    <input id="price-input" type="number" placeholder="Precio" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false" min="1"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+                    <input id="rating-input" type="number" placeholder="Calificación (1-5)" autocomplete="off"
+                        autocorrect="off" autocapitalize="off" spellcheck="false" min="1" max="5" step="0.1"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md">
+                    <input id="reviews-input" type="number" placeholder="Reseñas" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false" min="1"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md">
+                    <input id="destination-input" type="text" placeholder="Destino" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic shadow-md">
+                    <div class="relative w-full group shadow-md">
+                        <button type="button" id="category-dropdown-btn"
+                            class="w-full px-4 py-3 rounded-xl bg-white flex justify-between items-center focus:outline-none shadow-sm transition-all group-hover:cursor-pointer">
+                            <span id="category-dropdown-text" class="italic text-neutral-400">Categoría</span>
+                            <svg viewBox="0 0 24 24" class="w-4 h-4 text-gray-400 transition-transform duration-300"
+                                id="category-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <ul id="category-dropdown-menu"
+                            class="absolute left-0 mt-1 w-full bg-white rounded-xl shadow-lg hidden z-20">
+                            <li class="px-4 py-3 hover:bg-neutral-200 cursor-pointer rounded-t-xl" data-value="beach">
+                                Playa
+                            </li>
+                            <li class="px-4 py-3 hover:bg-neutral-200 cursor-pointer" data-value="mountain">Montaña</li>
+                            <li class="px-4 py-3 hover:bg-neutral-200 cursor-pointer rounded-b-xl" data-value="city">
+                                Ciudad
+                            </li>
+                        </ul>
+                        <input type="text" id="category-input"
+                            class="pointer-events-none opacity-0 z-0 absolute top-0 left-0 w-1 h-1">
+                    </div>
+                    <textarea id="description-input" placeholder="Descripción" autocomplete="off" autocorrect="off"
+                        autocapitalize="off"
+                        class="w-full px-4 py-3 rounded-xl border-none bg-white focus:outline-none placeholder:italic resize-none shadow-md scrollbar-none"></textarea>
+                    <div class="relative w-full">
+                        <input type="file" id="image-input" accept="image/*" oncontextmenu="return false"
+                            ondragstart="return false" ondrop="return false"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        <div class="w-full px-4 py-3 rounded-xl bg-white flex justify-between items-center shadow-md">
+                            <span class="italic text-neutral-400">Subir imagen</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="w-6 h-6 text-neutral-400 stroke-current fill-none">
+                                <path
+                                    d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21" />
+                                <path d="m14 19.5 3-3 3 3" />
+                                <path d="M17 22v-5.5" />
+                                <circle cx="9" cy="9" r="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center mt-4 px-4 gap-4">
+                        <button type="submit" id="submit"
+                            class="bg-gradient-to-tr from-slate-900 to-zinc-800 px-6 py-4 rounded-xl border-none focus:outline-none cursor-pointer transition-all duration-300 hover:scale-105">
+                            <span class="text-md text-slate-50 drop-shadow">Agregar
+                                destino</span>
+                        </button>
+                        <button id="clear-form"
+                            class="bg-gradient-to-tr from-slate-900 to-zinc-800 p-4 rounded-xl border-none focus:outline-none cursor-pointer transition-all duration-300 hover:scale-105 hidden opacity-0 scale-90">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="w-6 h-6 text-slate-50 stroke-current fill-none">
+                                <path d="M21 6H3" />
+                                <path d="M7 12H3" />
+                                <path d="M7 18H3" />
+                                <path d="M12 18a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L11 14" />
+                                <path d="M11 10v4h4" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Clara separación entre el formulario y la tabla porque si no luego me pierdo -->
+
+            <div
+                class="w-full md:flex-1 min-w-[300px] min-h-[300px] overflow-auto rounded-xl shadow-lg bg-white/50 backdrop-blur-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[800px] md:min-w-full table-fixed">
+                        <thead class="bg-white/80 text-left rounded-t-xl sticky top-0">
+                            <tr class="rounded-t-xl border-b border-neutral-400">
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 rounded-tl-xl w-20 truncate">Foto
+                                </th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[120px] truncate">Destino</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[100px] truncate">Ciudad</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[100px] truncate">País</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[100px] truncate">Categoría</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[80px] truncate">Precio</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[100px] truncate">Calificación</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[80px] truncate">Reseñas</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 w-[200px] truncate">Descripción</th>
+                                <th class="p-3 lg:p-4 font-medium text-neutral-700 rounded-tr-xl w-24 truncate">Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" class="divide-y divide-neutral-400">
+                            <!-- Queda vacío esto. Para: Juan del futuro; De: Juan del pasado -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"
+        class="fixed bottom-0 left-0 w-full z-10 bg-black/75 text-white p-6 pr-8 transition-transform duration-300 translate-y-full">
+        <p>&copy; 2025 Agencia de Viajes Adolfo</p>
+    </footer>
+    <template id="tr-template">
+        <tr id="tr" class="hover:bg-white/70 transition-colors cursor-pointer">
+            <td id="td-image" class="p-0 m-0 w-[110px] h-[64px]">
+                <img alt="Imagen del destino" class="w-full h-full object-cover">
+            </td>
+            <td id="td-destination" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-city" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-country" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-category" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-price" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-rating" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-reviews" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-description" class="p-4 text-neutral-600 max-w-xs truncate"></td>
+            <td id="td-actions" class="p-4">
+                <div class="flex gap-2">
+                    <button
+                        class="p-2 text-green-800 cursor-pointer hover:text-green-900 hover:scale-125 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 stroke-current fill-none">
+                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                        </svg>
+                    </button>
+                    <button
+                        class="p-2 text-red-700 cursor-pointer hover:text-red-800 hover:scale-125 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 stroke-current fill-none">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </template>
+    <script src="js/script.js"></script>
+    <script src="js/destinations-admin.js"></script>
+</body>
+
+</html>
